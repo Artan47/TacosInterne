@@ -504,7 +504,7 @@ const NAV = [
 const BOTTOM = [["home","Accueil"],["tasks","Tâches"],["recipes","Recettes"],["sales","Ventes"],["more","Plus"]];
 function renderNav(){
   const cur = UI.view === "recipe" ? "recipes" : UI.view;
-  $("#side").innerHTML = '<div class="brand"><img class="logo" src="${LOGO}" alt="The Tacos Factory Genève"></div>' +
+  $("#side").innerHTML = `<div class="brand"><img class="logo" src="${LOGO}" alt="The Tacos Factory Genève"></div>` +
     NAV.map(([v, l], i) => (i === 6 ? '<div class="sep"></div>' : "") + `<button data-act="go" data-v="${v}" ${cur === v ? 'aria-current="page"' : ""}>${ICON[v]}${l}</button>`).join("");
   const inMore = ["ingredients","charges","journal","settings","more"].includes(cur);
   $("#bottom").innerHTML = BOTTOM.map(([v, l]) => `<button data-act="go" data-v="${v}" ${(cur === v || (v === "more" && inMore)) ? 'aria-current="page"' : ""}>${ICON[v]}<span>${l}</span></button>`).join("");
