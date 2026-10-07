@@ -1,0 +1,5 @@
+# Ne jamais publier de données du restaurant
+*sauvegarde*.json
+*.backup.json
+.DS_Store
+node_modules/
